@@ -1,5 +1,5 @@
 # magellan
-This is a WordPress website.
+This is a WordPress website. The only issue is the "marinate" theme isn't a child. Deactivate automatic uploads to use.
 
 Directions:
 Setup a blank WordPress site at the domain mini-ipo.com
