@@ -14,17 +14,22 @@ else {
  	$marinate_col_class = "col-lg-9 col-md-9 col-xs-12 col-sm-12";
 }
 ?>
-Category 4!!!
+       archive.php
         <section class="blog-section">
+<div id = "top-video">
+<video autoplay width = "90%">
+    <source src="http://mini-ipo.com/wp-content/uploads/suits-walking.mov" type="video/mp4">
+</video>
             <div class="container">
-	            <div class="<?php echo esc_attr($marinate_col_class); ?>">            
-                    <div class="row">
+<video autoplay width = "90%">
+    <source src="http://mini-ipo.com/wp-content/uploads/suits-walking.mov" type="video/mp4">
+</video>	            <div class="<?php echo esc_attr($marinate_col_class); ?>">                     <div class="row">
                     
           <?php if( have_posts() ) : ?>
 						<div class="archive-title">
 							<?php
-							the_archive_title('<h2>', '</h2>');
-							the_archive_description( '<div class="archive-description">', '</div>' );
+							echo ('<h2>Mini-IPOs!</h2>');
+							echo ( '<div class="archive-description">They are a great idea!</div>' );
 							?>
 						</div>
           <?php

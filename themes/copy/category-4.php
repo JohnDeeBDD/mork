@@ -14,19 +14,17 @@ else {
  	$marinate_col_class = "col-lg-9 col-md-9 col-xs-12 col-sm-12";
 }
 ?>
-category-3.php
+Category 4!!!
         <section class="blog-section">
             <div class="container">
-<video autoplay width = "90%">
-    <source src="http://mini-ipo.com/wp-content/uploads/suits-walking.mov" type="video/mp4">
-</video>	            <div class="<?php echo esc_attr($marinate_col_class); ?>">            
+	            <div class="<?php echo esc_attr($marinate_col_class); ?>">            
                     <div class="row">
                     
           <?php if( have_posts() ) : ?>
 						<div class="archive-title">
 							<?php
-							echo ('<h2>Mini-IPOs!</h2>');
-							echo ( '<div class="archive-description">They are a great idea!</div>' );
+							the_archive_title('<h2>', '</h2>');
+							the_archive_description( '<div class="archive-description">', '</div>' );
 							?>
 						</div>
           <?php
@@ -61,8 +59,9 @@ category-3.php
                 </div>
             <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
             <?php get_sidebar(); ?>
-            </div>                
+            </div> 
+				<?php comments_template(); ?>
             </div>
         </section>
         
-<?php  include("mork-reply.php"); get_footer(); ?>
+<?php  get_footer(); ?>

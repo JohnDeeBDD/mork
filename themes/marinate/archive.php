@@ -14,7 +14,7 @@ else {
  	$marinate_col_class = "col-lg-9 col-md-9 col-xs-12 col-sm-12";
 }
 ?>
-       archive.php
+
         <section class="blog-section">
             <div class="container">
 	            <div class="<?php echo esc_attr($marinate_col_class); ?>">            

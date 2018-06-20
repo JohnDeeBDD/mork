@@ -19,7 +19,16 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-			<div id="comments" class="comments-area">
+<style>
+	#mork-comments-container:{margin-left:-100%;margin-right:-100%;padding:5px;}
+	#mork-head-shot-div{min-width:48%;max-width:48%;float:left;padding:5px;}
+	#comments{min-width:48%;max-width:48%;float:left;padding:5px;}
+</style>
+<div id = "mork-comments-container">
+	<div id = "mork-head-shot-div">
+		<img src = "http://mini-ipo.com/wp-content/uploads/Dempey-background-1.jpg" />
+	</div>
+	<div id="comments" class="comments-area">
 
 	<?php
 	// You can start editing here -- including this comment!
@@ -97,14 +106,16 @@ if ( post_password_required() ) {
     //Change the html of comment form fields
     $fields =  array(
         'author' =>
-            '<p class="comment-form-author"><label for="author">'.__('Name', 'marinate').'<span class="required">*</span></label><input id="author" name="author" type="text" placeholder="' .esc_attr('Full Name', 'marinate'). '" value="' . esc_attr( $commenter['comment_author'] ) .
+            '<p class="comment-form-author"><input id="author" name="author" type="text" placeholder="' .esc_attr('Name', 'marinate'). '" value="' . esc_attr( $commenter['comment_author'] ) .
             '" size="30"' . $aria_req . ' class="form-control" /></p>',
         'email' =>
-            '<p class="comment-form-email"><label for="author">'.__('Email', 'marinate').'<span class="required">*</span></label><input class="form-control" id="email" name="email" type="text" placeholder="' .esc_attr('Email Address', 'marinate'). '" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-            '" size="30"' . $aria_req . ' /></p>',
+            '<p class="comment-form-email"><input class="form-control" id="email" name="email" type="text" placeholder="' .esc_attr('Email Address', 'marinate'). '" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+            '" size="30"' . $aria_req . ' /></p><p class="comment-form-phone"><input class="form-control" id="comment-form-phone" name="comment-form-phone" type="text" placeholder="Phone" size="30" /></p>',
         'url' =>
-            '<p class="comment-form-url"><label for="author">'.__('Website', 'marinate').'</label><input class="form-control" id="url" name="url" type="text" placeholder="' .esc_attr('Website', 'marinate'). '" value="' . esc_attr( $commenter['comment_author_url'] ) .
-            '" size="30" /></p>',
+            '<p class="comment-form-url"><input class="form-control" id="url" name="url" type="text" placeholder="' .esc_attr('Website', 'marinate'). '" value="' . esc_attr( $commenter['comment_author_url'] ) .
+            '" size="30" /></p>
+			
+			<p class="comment-form-time"><input class="form-control" id="time" name="time" type="text" placeholder="Best time to call?" size="30" /></p>',
     );
     $comment_arg = array(
         'id_form'           => 'commentform',
@@ -112,7 +123,7 @@ if ( post_password_required() ) {
         'class_submit'      => 'submit',
         'name_submit'       => 'submit',
         'label_submit'		=> esc_attr__( 'Submit', 'marinate' ), 
-        'title_reply'       => esc_html__( 'Leave a Comment', 'marinate' ), /* translators: %s: title of comment form */
+        'title_reply'       => esc_html__( 'Request a Call Back', 'marinate' ), /* translators: %s: title of comment form */
         'title_reply_to'    => esc_html__( 'Leave a Comment to %s', 'marinate' ),
         'cancel_reply_link' => esc_html__( 'Cancel Reply', 'marinate' ),
         'format'            => 'xhtml',
@@ -141,5 +152,8 @@ if ( post_password_required() ) {
     );
     
     comment_form( $comment_arg );?>
-
+<script>
+				document.getElementsByName('best_time_to_call')[0].placeholder='Enter a time';
+</script>
 </div><!-- #comments -->
+</div><!-- mork-comments-container -->

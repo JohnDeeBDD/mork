@@ -60,4 +60,4 @@ else {
 </div><!-- #content -->
 
         
-<?php  include ("mork-reply.php"); get_footer(); ?>
+<?php  get_footer(); ?>
